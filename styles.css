@@ -261,7 +261,7 @@ code {
 .gate-card h1 { text-align: center; }
 .gate-card .lead { text-align: center; }
 .gate-error {
-  color: #ff8fab;
+  color: var(--pink-soft);
   font-size: 0.9rem;
   margin: 0.5rem 0 0;
   display: none;
