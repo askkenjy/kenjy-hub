@@ -212,3 +212,58 @@ input:focus { outline: 2px solid var(--pink); border-color: transparent; }
   .nav-links { width: 100%; justify-content: flex-start; }
   .hero { padding: 2.5rem 0 2rem; }
 }
+
+/* Affiliate disclosure — visitor-facing */
+.disclosure {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 1.5rem auto 2rem;
+  padding: 1.15rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 43, 214, 0.08);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.disclosure strong { color: var(--pink-soft); }
+.disclosure p { margin: 0; color: var(--text); }
+.disclosure-inline {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  text-align: center;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: rgba(255,255,255,0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+  color: var(--pink-soft);
+  word-break: break-word;
+}
+
+/* Email gate landing */
+.gate-wrap {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0 3rem;
+}
+.gate-card {
+  width: min(440px, 100%);
+  padding: 2rem 1.75rem;
+  text-align: left;
+}
+.gate-card h1 { text-align: center; }
+.gate-card .lead { text-align: center; }
+.gate-error {
+  color: #ff8fab;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+  display: none;
+}
+.gate-error.show { display: block; }

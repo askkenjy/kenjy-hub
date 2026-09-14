@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Affiliates &amp; Disclosures | Kenjy Optimistic</title>
-  <meta name="description" content="Honest affiliate disclosure. Placeholder links for ElevenLabs, Lovable, Mubert — no fake approvals." />
+  <title>Affiliate Disclosure | Kenjy Optimistic</title>
+  <meta name="description" content="FTC affiliate disclosure for Kenjy Optimistic. Some links may earn a commission at no extra cost to you." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -12,37 +12,56 @@
   <header id="site-header" class="site-header"></header>
   <main id="main" class="section container">
     <p class="tagline">Transparency</p>
-    <h1>Affiliates &amp; <span class="neon-text">disclosures</span></h1>
-    <p class="lead">Some links may earn Kenjy Optimistic a commission at no extra cost to you. We only recommend tools we’d use for teaching beginners AI, content, and music workflows.</p>
+    <h1>Affiliate <span class="neon-text">disclosure</span></h1>
+    <p class="lead">Kenjy Optimistic may earn a commission when you buy through some links on this site — at no extra cost to you.</p>
 
-    <div class="disclaimer">
-      <strong>Honest disclosure:</strong> Affiliate URLs below are placeholders in <code>config.js</code>
-      (<code>AFFILIATE_ELEVENLABS</code>, <code>AFFILIATE_LOVABLE</code>, <code>AFFILIATE_MUBERT</code>).
-      They are empty / <code>#</code> until real approved links are added. <strong>No fake “approved partner” claims.</strong>
-    </div>
+    <aside class="disclosure" role="note" aria-label="Affiliate disclosure">
+      <p><strong>Disclosure:</strong> This website contains affiliate links. If you click a link and make a purchase, Kenjy Optimistic may receive a commission. We only recommend tools we believe help beginners learn AI, create content, and make money. Opinions are our own. Results are not guaranteed.</p>
+    </aside>
+
+    <h2>Partner tools</h2>
+    <p>These are tools we plan to feature. Live affiliate links appear here once each program is active.</p>
 
     <div class="grid" style="margin-top:1.5rem">
       <article class="glass card">
         <h3>ElevenLabs</h3>
         <p>Voice AI for creators — narrations, characters, and content audio.</p>
-        <a class="btn btn-outline" href="#" data-config="AFFILIATE_ELEVENLABS">Affiliate link (TBD)</a>
+        <a class="btn btn-outline affiliate-link" href="#" data-config="AFFILIATE_ELEVENLABS" data-label="Visit ElevenLabs">Coming soon</a>
       </article>
       <article class="glass card">
         <h3>Lovable</h3>
         <p>Build apps and sites with AI — useful for creator MVPs.</p>
-        <a class="btn btn-outline" href="#" data-config="AFFILIATE_LOVABLE">Affiliate link (TBD)</a>
+        <a class="btn btn-outline affiliate-link" href="#" data-config="AFFILIATE_LOVABLE" data-label="Visit Lovable">Coming soon</a>
       </article>
       <article class="glass card">
         <h3>Mubert</h3>
         <p>AI music generation for content and products.</p>
-        <a class="btn btn-outline" href="#" data-config="AFFILIATE_MUBERT">Affiliate link (TBD)</a>
+        <a class="btn btn-outline affiliate-link" href="#" data-config="AFFILIATE_MUBERT" data-label="Visit Mubert">Coming soon</a>
       </article>
     </div>
 
-    <p style="margin-top:2rem">Questions: <a href="mailto:askkenjy@gmail.com">askkenjy@gmail.com</a> · TikTok <a href="https://www.tiktok.com/@kenjy_optimistic" target="_blank" rel="noopener">@kenjy_optimistic</a></p>
+    <p class="disclosure-inline">Questions about this disclosure? Email <a href="mailto:askkenjy@gmail.com">askkenjy@gmail.com</a></p>
   </main>
   <footer id="site-footer" class="site-footer"></footer>
   <script src="/config.js"></script>
   <script src="/nav.js"></script>
+  <script>
+    document.querySelectorAll("a.affiliate-link").forEach(function (el) {
+      var key = el.getAttribute("data-config");
+      var cfg = window.KENJY_CONFIG || {};
+      var url = cfg[key];
+      if (url && url !== "#") {
+        el.setAttribute("href", url);
+        el.setAttribute("target", "_blank");
+        el.setAttribute("rel", "noopener sponsored");
+        el.textContent = el.getAttribute("data-label") || "Visit";
+      } else {
+        el.removeAttribute("href");
+        el.setAttribute("aria-disabled", "true");
+        el.style.opacity = "0.7";
+        el.style.pointerEvents = "none";
+      }
+    });
+  </script>
 </body>
 </html>

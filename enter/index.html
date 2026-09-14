@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enter — Free AI Money Starter Access | Kenjy Optimistic</title>
+  <meta name="description" content="Enter your email to unlock the Kenjy Optimistic hub — free Make Money with AI starter access." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main id="main" class="gate-wrap container">
+    <div class="glass gate-card">
+      <p class="tagline" style="text-align:center">Free access</p>
+      <h1>Enter with your <span class="neon-text">email</span></h1>
+      <p class="lead">Drop your email to unlock the hub — Free Pack, Club, courses, and tools for beginners making money with AI.</p>
+
+      <form id="gate-form" action="https://formsubmit.co/ajax/askkenjy@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Kenjy Hub — new email unlock" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <label for="gate-email">Email</label>
+        <input id="gate-email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" />
+        <p id="gate-error" class="gate-error" role="alert">Enter a valid email to continue.</p>
+        <button class="btn btn-primary btn-block" id="gate-btn" type="submit">Enter the hub</button>
+      </form>
+
+      <p style="font-size:0.85rem;margin-top:1.25rem;text-align:center">
+        We use your email to send the Free Pack and updates. No spam.
+        Prefer TikTok? <a href="https://www.tiktok.com/@kenjy_optimistic" target="_blank" rel="noopener">@kenjy_optimistic</a>
+      </p>
+      <aside class="disclosure" style="margin-top:1.5rem;max-width:none" role="note">
+        <p><strong>Note:</strong> Some pages may include affiliate links. If you buy through them, Kenjy Optimistic may earn a commission at no extra cost to you.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="/config.js"></script>
+  <script>
+    (function () {
+      var KEY = "kenjy_hub_unlocked";
+      var EMAIL_KEY = "kenjy_hub_email";
+      var next = (window.KENJY_CONFIG && window.KENJY_CONFIG.ENTER_REDIRECT) || "/free/";
+      try {
+        if (localStorage.getItem(KEY) === "1") {
+          location.replace(next);
+          return;
+        }
+      } catch (e) {}
+
+      var form = document.getElementById("gate-form");
+      var input = document.getElementById("gate-email");
+      var err = document.getElementById("gate-error");
+      var btn = document.getElementById("gate-btn");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = (input.value || "").trim();
+        var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!ok) {
+          err.classList.add("show");
+          input.focus();
+          return;
+        }
+        err.classList.remove("show");
+        btn.disabled = true;
+        btn.textContent = "Entering…";
+
+        var finish = function () {
+          try {
+            localStorage.setItem(KEY, "1");
+            localStorage.setItem(EMAIL_KEY, email);
+          } catch (e2) {}
+          location.href = next;
+        };
+
+        fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ email: email, _subject: "Kenjy Hub — new email unlock", source: "enter-gate" })
+        }).then(function () { finish(); }).catch(function () { finish(); });
+      });
+    })();
+  </script>
+</body>
+</html>

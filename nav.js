@@ -9,6 +9,7 @@
   }
   var links = [
     { href: "/", label: "Home" },
+    { href: "/enter/", label: "Enter" },
     { href: "/free/", label: "Free Pack" },
     { href: "/shop/", label: "Shop" },
     { href: "/club/", label: "Club" },
@@ -47,6 +48,7 @@
       '<a href="mailto:askkenjy@gmail.com">askkenjy@gmail.com</a>' +
       "</div>" +
       "<p style=\"font-size:0.8rem;margin-top:1rem\">© " + new Date().getFullYear() + " Kenjy Optimistic. Results not guaranteed. Educational content only.</p>" +
+      '<p class="disclosure-inline"><a href="/affiliates/">Affiliate disclosure</a></p>' +
       "</div>";
   }
 
@@ -56,7 +58,13 @@
     var cfg = window.KENJY_CONFIG || {};
     var url = cfg[key];
     if (url && url !== "#") {
-      if (el.tagName === "A") el.setAttribute("href", url);
+      if (el.tagName === "A") {
+        el.setAttribute("href", url);
+        if (key.indexOf("AFFILIATE_") === 0) {
+          el.setAttribute("rel", "noopener sponsored");
+          el.setAttribute("target", "_blank");
+        }
+      }
     }
   });
 })();

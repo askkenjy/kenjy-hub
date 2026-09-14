@@ -5,6 +5,7 @@ window.KENJY_CONFIG = {
   email: "askkenjy@gmail.com",
   tiktok: "https://www.tiktok.com/@kenjy_optimistic",
   aicaption: "https://aicaption.ai",
+  ENTER_REDIRECT: "/free/",
 
   /* Stripe / checkout (keep customers on-site; wire to your Stripe Payment Links) */
   STRIPE_CLUB_MONTHLY: "#",
