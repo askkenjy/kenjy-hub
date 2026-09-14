@@ -19,7 +19,7 @@
   var navHtml = links.map(function (l) {
     return '<li><a href="' + l.href + '"' + (active(l.href) ? ' class="active"' : "") + ">" + l.label + "</a></li>";
   }).join("") +
-    '<li><a class="nav-cta" href="https://aicaption.ai" target="_blank" rel="noopener">AI Caption</a></li>';
+    '<li><a class="nav-cta" href="/enter/">Free Pack</a></li>';
 
   var header = document.getElementById("site-header");
   if (header) {
