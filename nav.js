@@ -13,7 +13,7 @@
     { href: "/free/", label: "Free Pack" },
     { href: "/shop/", label: "Shop" },
     { href: "/club/", label: "Club" },
-    { href: "/courses/ai-made-simple/", label: "Courses" },
+    { href: "/courses/", label: "Courses" },
     { href: "/tools/", label: "Tools" }
   ];
   var navHtml = links.map(function (l) {
