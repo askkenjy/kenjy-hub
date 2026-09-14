@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kenjy AI Money Club — $37/mo | Kenjy Optimistic</title>
+  <meta name="description" content="Join Kenjy AI Money Club: $37/mo, $297/yr, or founding $27 for the first 100 members." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <main id="main">
+    <section class="hero container">
+      <div class="badge">Membership</div>
+      <h1>Kenjy <span class="neon-text">AI Money Club</span></h1>
+      <p class="lead">Weekly plays, beginner-friendly AI workflows, brand &amp; content feedback, and a community that ships — not just scrolls.</p>
+    </section>
+
+    <section class="section-sm container">
+      <ul class="check-list glass card" style="max-width:640px;margin:0 auto">
+        <li>Monthly live sessions &amp; replay vault</li>
+        <li>AI content + monetization playbooks</li>
+        <li>Prompt packs updated as tools change</li>
+        <li>Accountability pods for beginners</li>
+        <li>Early access to courses &amp; tools</li>
+        <li>Direct line to Kenjy for offer feedback</li>
+      </ul>
+    </section>
+
+    <section class="section container">
+      <h2 style="text-align:center">Pick your plan</h2>
+      <div class="grid grid-3" style="margin-top:1.5rem">
+        <article class="glass card">
+          <h3>Monthly</h3>
+          <p class="price">$37 <small>/mo</small></p>
+          <p>Flexible. Cancel anytime. Full club access.</p>
+          <a class="btn btn-primary btn-block" href="#" data-config="STRIPE_CLUB_MONTHLY">Join monthly</a>
+        </article>
+        <article class="glass card" style="border-color:var(--pink)">
+          <span class="pill">Best value</span>
+          <h3>Yearly</h3>
+          <p class="price">$297 <small>/yr</small></p>
+          <p>Save vs monthly. Commit to a year of building.</p>
+          <a class="btn btn-primary btn-block" href="#" data-config="STRIPE_CLUB_YEARLY">Join yearly</a>
+        </article>
+        <article class="glass card">
+          <span class="pill">First 100</span>
+          <h3>Founding</h3>
+          <p class="price">$27 <small>/mo</small></p>
+          <p>Locked founding rate for the first 100 members.</p>
+          <a class="btn btn-primary btn-block" href="#" data-config="STRIPE_CLUB_FOUNDING">Claim founding</a>
+        </article>
+      </div>
+      <p class="disclaimer" style="max-width:720px;margin:2rem auto 0">Checkout buttons use placeholders in <code>config.js</code> (<code>STRIPE_CLUB_*</code>). Replace with your Stripe Payment Links to keep checkout on your funnel.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:2rem">
+        <a class="btn btn-ghost" href="/free/">Start with Free Pack</a>
+        <a class="btn btn-ghost" href="mailto:askkenjy@gmail.com">Questions? Email Kenjy</a>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="/config.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>
