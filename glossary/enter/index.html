@@ -16,7 +16,7 @@
       <p class="lead">Beginner definitions for the Kenjy AI Money Curriculum — who, where, what, and when — plain English, no jargon wall.</p>
 
       <form id="gate-form" action="https://formsubmit.co/ajax/askkenjy@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Kenjy Hub — glossary unlock" />
+        <input type="hidden" name="_subject" value="Kenjy Hub — AI Glossary unlock" />
         <input type="hidden" name="_template" value="table" />
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <label for="gate-email">Email</label>
@@ -73,7 +73,11 @@
         fetch(form.action, {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({ email: email, _subject: "Kenjy Hub — glossary unlock", source: "glossary-enter" })
+          body: JSON.stringify({
+            email: email,
+            _subject: "Kenjy Hub — AI Glossary unlock",
+            source: "glossary-enter"
+          })
         }).then(function () { finish(); }).catch(function () { finish(); });
       });
     })();

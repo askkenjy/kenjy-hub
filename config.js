@@ -7,7 +7,7 @@ window.KENJY_CONFIG = {
   aicaption: "https://aicaption.ai",
   ENTER_REDIRECT: "/free/",
   GLOSSARY_REDIRECT: "/glossary/",
-  /* Drive glossary lead magnet — Ops canonical */
+  /* Canonical AI Glossary Drive (Ops). Anyone-with-link HOLD — gate unlock only. */
   GLOSSARY_DRIVE: "https://docs.google.com/document/d/14oUfF9azl6eWdeSOQ5va1cJziXJvg4n7wH96G4LQD1o/edit",
 
   /* Stripe / checkout (keep customers on-site; wire to your Stripe Payment Links) */
