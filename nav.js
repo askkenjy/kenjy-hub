@@ -11,13 +11,14 @@
     { href: "/", label: "Home" },
     { href: "/enter/", label: "Enter" },
     { href: "/free/", label: "Free Pack" },
+    { href: "/glossary/", label: "Glossary" },
     { href: "/shop/", label: "Shop" },
     { href: "/club/", label: "Club" },
     { href: "/courses/", label: "Curriculum" },
     { href: "/tools/", label: "Tools" }
   ];
   var navHtml = links.map(function (l) {
-    return '<li><a href="' + l.href + '"' + (active(l.href) ? ' class="active"' : "") + ">' + l.label + "</a></li>";
+    return '<li><a href="' + l.href + '"' + (active(l.href) ? ' class="active"' : "") + ">" + l.label + "</a></li>";
   }).join("") +
     '<li><a class="nav-cta" href="/enter/">Free Pack</a></li>';
 
@@ -39,6 +40,7 @@
       '<div class="footer-links">' +
       '<a href="/enter/">Enter</a>' +
       '<a href="/free/">Free Pack</a>' +
+      '<a href="/glossary/">Glossary</a>' +
       '<a href="/club/">AI Money Club</a>' +
       '<a href="/shop/">Shop</a>' +
       '<a href="/tools/">Tools</a>' +
@@ -54,7 +56,7 @@
       "</div>";
   }
 
-  /* Wire Stripe / affiliate placeholders from config */
+  /* Wire Stripe / affiliate / glossary Drive from config */
   document.querySelectorAll("[data-config]").forEach(function (el) {
     var key = el.getAttribute("data-config");
     var cfg = window.KENJY_CONFIG || {};

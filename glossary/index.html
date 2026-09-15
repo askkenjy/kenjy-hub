@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Money Glossary — Beginner Terms | Kenjy Optimistic</title>
+  <meta name="description" content="Beginner AI terminology for Kenjy AI Money Curriculum students — who, where, what, when. Plain English." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+  <main id="main">
+    <section class="hero container">
+      <div class="badge">Curriculum companion</div>
+      <p class="tagline">WHO · WHERE · WHAT · WHEN</p>
+      <h1>AI Money <span class="neon-text">Glossary</span></h1>
+      <p class="lead">Plain-English definitions for beginners in the Kenjy AI Money Curriculum. No jargon wall — terms that help you learn who you help, where you show up, what you offer, and when you ship.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-primary btn-lg" href="/enter/">Enter Free Pack</a>
+        <a class="btn btn-ghost btn-lg" href="/club/">Join AI Money Club</a>
+        <a class="btn btn-ghost btn-lg" href="/courses/">Curriculum</a>
+      </div>
+    </section>
+
+    <section class="section container" id="download">
+      <div class="glass card" style="max-width:640px;margin:0 auto;text-align:center">
+        <h2>Drive glossary pack</h2>
+        <p>Full printable glossary (when Ops publishes the Drive doc). Unlocked after email gate.</p>
+        <a id="glossary-drive" class="btn btn-primary" href="#" target="_blank" rel="noopener">Open Drive glossary</a>
+        <p id="glossary-drive-note" style="font-size:0.85rem;margin-top:0.75rem">Drive link wires when Ops sets <code>GLOSSARY_DRIVE</code> in config — no invented URL.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 style="text-align:center;margin-bottom:0.5rem">Term scaffold</h2>
+      <p style="text-align:center;max-width:560px;margin:0 auto 2rem">Final definitions land when Scripts delivers the term list. Structure is ready — neon glass cards by brand lens.</p>
+
+      <h3 class="neon-text" style="margin:2rem 0 1rem">WHO</h3>
+      <div class="grid" id="terms-who">
+        <article class="glass card"><h3>Niche</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Ideal beginner</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Offer</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+      </div>
+
+      <h3 class="neon-text" style="margin:2rem 0 1rem">WHERE</h3>
+      <div class="grid" id="terms-where">
+        <article class="glass card"><h3>Platform</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Bio link</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>CTA</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+      </div>
+
+      <h3 class="neon-text" style="margin:2rem 0 1rem">WHAT</h3>
+      <div class="grid" id="terms-what">
+        <article class="glass card"><h3>Prompt</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Model</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Agent</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Lead magnet</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+      </div>
+
+      <h3 class="neon-text" style="margin:2rem 0 1rem">WHEN</h3>
+      <div class="grid" id="terms-when">
+        <article class="glass card"><h3>Cadence</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Ship</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+        <article class="glass card"><h3>Iterate</h3><p class="muted">Scaffold — Scripts definition pending.</p></article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="glass card" style="text-align:center;padding:2rem 1.5rem">
+        <h2>Keep building</h2>
+        <p>Free Pack first, then Curriculum tracks, then Club elite weekly.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn btn-primary" href="/enter/">Free Pack</a>
+          <a class="btn btn-ghost" href="/courses/">Curriculum</a>
+          <a class="btn btn-ghost" href="/club/">Club</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="/config.js"></script>
+  <script src="/nav.js"></script>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("kenjy_glossary_unlocked") !== "1") {
+          location.replace("/glossary/enter/");
+          return;
+        }
+      } catch (e) {
+        location.replace("/glossary/enter/");
+        return;
+      }
+      var cfg = window.KENJY_CONFIG || {};
+      var url = cfg.GLOSSARY_DRIVE;
+      var a = document.getElementById("glossary-drive");
+      var note = document.getElementById("glossary-drive-note");
+      if (a && url && url !== "#") {
+        a.setAttribute("href", url);
+        if (note) note.textContent = "Opens the Ops Drive glossary pack.";
+      }
+    })();
+  </script>
+</body>
+</html>

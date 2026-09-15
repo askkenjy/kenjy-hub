@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unlock AI Glossary — Kenjy Optimistic</title>
+  <meta name="description" content="Enter your email to unlock the beginner AI Money Glossary for Kenjy Optimistic curriculum students." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main id="main" class="gate-wrap container">
+    <div class="glass gate-card">
+      <p class="tagline" style="text-align:center">Lead magnet</p>
+      <h1>Unlock the <span class="neon-text">AI Glossary</span></h1>
+      <p class="lead">Beginner definitions for the Kenjy AI Money Curriculum — who, where, what, and when — plain English, no jargon wall.</p>
+
+      <form id="gate-form" action="https://formsubmit.co/ajax/askkenjy@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Kenjy Hub — glossary unlock" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <label for="gate-email">Email</label>
+        <input id="gate-email" name="email" type="email" required placeholder="you@email.com" autocomplete="email" />
+        <p id="gate-error" class="gate-error" role="alert">Enter a valid email to continue.</p>
+        <button class="btn btn-primary btn-block" id="gate-btn" type="submit">Unlock glossary</button>
+      </form>
+
+      <p style="font-size:0.85rem;margin-top:1.25rem;text-align:center">
+        We email the glossary unlock + curriculum tips. No spam.
+        Prefer Free Pack first? <a href="/enter/">Enter Free Pack</a>
+      </p>
+    </div>
+  </main>
+  <script src="/config.js"></script>
+  <script>
+    (function () {
+      var KEY = "kenjy_glossary_unlocked";
+      var EMAIL_KEY = "kenjy_glossary_email";
+      var next = (window.KENJY_CONFIG && window.KENJY_CONFIG.GLOSSARY_REDIRECT) || "/glossary/";
+      try {
+        if (localStorage.getItem(KEY) === "1") {
+          location.replace(next);
+          return;
+        }
+      } catch (e) {}
+
+      var form = document.getElementById("gate-form");
+      var input = document.getElementById("gate-email");
+      var err = document.getElementById("gate-error");
+      var btn = document.getElementById("gate-btn");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = (input.value || "").trim();
+        var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!ok) {
+          err.classList.add("show");
+          input.focus();
+          return;
+        }
+        err.classList.remove("show");
+        btn.disabled = true;
+        btn.textContent = "Unlocking…";
+
+        var finish = function () {
+          try {
+            localStorage.setItem(KEY, "1");
+            localStorage.setItem(EMAIL_KEY, email);
+          } catch (e2) {}
+          location.href = next;
+        };
+
+        fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ email: email, _subject: "Kenjy Hub — glossary unlock", source: "glossary-enter" })
+        }).then(function () { finish(); }).catch(function () { finish(); });
+      });
+    })();
+  </script>
+</body>
+</html>

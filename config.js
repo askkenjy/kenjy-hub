@@ -6,6 +6,9 @@ window.KENJY_CONFIG = {
   tiktok: "https://www.tiktok.com/@kenjy_optimistic",
   aicaption: "https://aicaption.ai",
   ENTER_REDIRECT: "/free/",
+  GLOSSARY_REDIRECT: "/glossary/",
+  /* Drive glossary lead magnet — set when Ops publishes public/anyone-with-link doc */
+  GLOSSARY_DRIVE: "#",
 
   /* Stripe / checkout (keep customers on-site; wire to your Stripe Payment Links) */
   STRIPE_CLUB_MONTHLY: "#",
