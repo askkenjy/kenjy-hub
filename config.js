@@ -7,8 +7,8 @@ window.KENJY_CONFIG = {
   aicaption: "https://aicaption.ai",
   ENTER_REDIRECT: "/free/",
   GLOSSARY_REDIRECT: "/glossary/",
-  /* Drive glossary lead magnet — set when Ops publishes public/anyone-with-link doc */
-  GLOSSARY_DRIVE: "#",
+  /* Drive glossary lead magnet — Ops canonical */
+  GLOSSARY_DRIVE: "https://docs.google.com/document/d/14oUfF9azl6eWdeSOQ5va1cJziXJvg4n7wH96G4LQD1o/edit",
 
   /* Stripe / checkout (keep customers on-site; wire to your Stripe Payment Links) */
   STRIPE_CLUB_MONTHLY: "#",
