@@ -13,11 +13,11 @@
     { href: "/free/", label: "Free Pack" },
     { href: "/shop/", label: "Shop" },
     { href: "/club/", label: "Club" },
-    { href: "/courses/", label: "Courses" },
+    { href: "/courses/", label: "Curriculum" },
     { href: "/tools/", label: "Tools" }
   ];
   var navHtml = links.map(function (l) {
-    return '<li><a href="' + l.href + '"' + (active(l.href) ? ' class="active"' : "") + ">" + l.label + "</a></li>";
+    return '<li><a href="' + l.href + '"' + (active(l.href) ? ' class="active"' : "") + ">' + l.label + "</a></li>";
   }).join("") +
     '<li><a class="nav-cta" href="/enter/">Free Pack</a></li>';
 
